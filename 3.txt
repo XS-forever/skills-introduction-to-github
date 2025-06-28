@@ -1,0 +1,10 @@
+import networkx as nx
+
+n = 32
+p = 0.55
+G = nx.erdos_renyi_graph(n, p)
+a = 0
+for i in G.nodes():
+    a = a + G.degree(i)
+print(f'Средняя степень вершин графа: {float(a)/len(G.nodes())}')
+print(f'Теоретическая величина средней степени вершин графа: {(n-1)*p}')
